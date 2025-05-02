@@ -554,54 +554,6 @@ function triggerUpdate(msg) {
 
 var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, k: __turbopack_refresh__, m: module, z: __turbopack_require_stub__ } = __turbopack_context__;
 {
-// import { useRouter } from "next/router";
-// import { useEffect, useState } from "react";
-// import io from "socket.io-client";
-// import Editor from "@monaco-editor/react";
-// const socket = io("http://localhost:3001");
-// export default function EditorPage() {
-//     const router = useRouter();
-//     const { roomId, username } = router.query;
-//     const [code, setCode] = useState("");
-//     const [users, setUsers] = useState([]);
-//     const [language, setLanguage] = useState("javascript");
-//     useEffect(() => {
-//         if (!roomId || !username) return;
-//         socket.emit("join-room", { roomId, username });
-//         socket.on("update-code", (newCode) => setCode(newCode));
-//         socket.on("room-users", (roomUsers) => setUsers(roomUsers));
-//         return () => socket.disconnect();
-//     }, [roomId, username]);
-//     return (
-//         <div className="flex flex-col h-screen bg-gray-900 text-white p-4">
-//             <h2 className="text-lg font-bold">Room ID: {roomId}</h2>
-//             <h3 className="text-md mb-2">Users: {users.join(", ")}</h3>
-//             <select className="mb-2 p-2 bg-gray-700 text-white rounded" value={language} onChange={(e) => setLanguage(e.target.value)}>
-//                 <option value="javascript">JavaScript</option>
-//                 <option value="python">Python</option>
-//                 <option value="cpp">C++</option>
-//                 <option value="java">Java</option>
-//             </select>
-//             <Editor
-//                 height="80vh"
-//                 theme="vs-dark"
-//                 language={language}
-//                 value={code}
-//                 onChange={(newCode) => {
-//                     setCode(newCode);
-//                     socket.emit("code-changed", { roomId, code: newCode });
-//                 }}
-//             />
-//         </div>
-//     );
-// }
-// collab_editor/pages/editor/[roomId].js
-// collab_editor/pages/editor/[roomId].js
-// collab_editor/pages/editor/[roomId].js
-// collab_editor/pages/editor/[roomId].js
-// collab_editor/pages/editor/[roomId].js
-// collab_editor/pages/editor/[roomId].js
-// collab_editor/pages/editor/[roomId].js
 __turbopack_esm__({
     "default": (()=>EditorPage)
 });
@@ -615,6 +567,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$monaco$2d$editor$2f$react$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_import__("[project]/node_modules/@monaco-editor/react/dist/index.mjs [client] (ecmascript) <locals>");
 ;
 var _s = __turbopack_refresh__.signature();
+"use client";
 ;
 ;
 ;
@@ -630,6 +583,12 @@ function EditorPage() {
     const [language, setLanguage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])("javascript");
     const [theme, setTheme] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])("vs-dark");
     const [activeSection, setActiveSection] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])("roomInfo");
+    const [isClient, setIsClient] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "EditorPage.useEffect": ()=>{
+            setIsClient(true); // ensure client-side rendering
+        }
+    }["EditorPage.useEffect"], []);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "EditorPage.useEffect": ()=>{
             if (!roomId || !username) return;
@@ -669,109 +628,59 @@ function EditorPage() {
                                 children: "CodeCollab"
                             }, void 0, false, {
                                 fileName: "[project]/pages/editor/[roomId].js",
-                                lineNumber: 102,
-                                columnNumber: 7
+                                lineNumber: 44,
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-xs text-[#5C5C5C] mt-1 hidden md:block",
                                 children: "Real-time collaborative editor"
                             }, void 0, false, {
                                 fileName: "[project]/pages/editor/[roomId].js",
-                                lineNumber: 103,
-                                columnNumber: 7
+                                lineNumber: 45,
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/editor/[roomId].js",
-                        lineNumber: 101,
-                        columnNumber: 5
+                        lineNumber: 43,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
                         className: "flex md:block",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: `flex-1 p-2 md:p-3 rounded-lg text-center md:text-left font-medium flex flex-col md:flex-row items-center justify-center md:justify-start transition-all duration-200 ${activeSection === "roomInfo" ? "bg-[#EADBE3] shadow-inner text-[#8D4A6A]" : "hover:bg-[#F3E6EB]"}`,
-                                onClick: ()=>setActiveSection("roomInfo"),
+                            "roomInfo",
+                            "participants",
+                            "settings"
+                        ].map((section)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: `flex-1 p-2 md:p-3 rounded-lg font-medium flex flex-col md:flex-row items-center justify-center md:justify-start transition-all duration-200 ${activeSection === section ? "bg-[#EADBE3] shadow-inner text-[#8D4A6A]" : "hover:bg-[#F3E6EB]"}`,
+                                onClick: ()=>setActiveSection(section),
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "text-lg md:text-base md:mr-3",
-                                        children: "🏠"
+                                        children: section === "roomInfo" ? "🏠" : section === "participants" ? "👥" : "⚙️"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 115,
-                                        columnNumber: 9
+                                        lineNumber: 57,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-xs md:text-base",
-                                        children: "Room"
+                                        className: "text-xs md:text-base capitalize",
+                                        children: section.replace("Info", "")
                                     }, void 0, false, {
                                         fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 116,
-                                        columnNumber: 9
+                                        lineNumber: 60,
+                                        columnNumber: 15
                                     }, this)
                                 ]
-                            }, void 0, true, {
+                            }, section, true, {
                                 fileName: "[project]/pages/editor/[roomId].js",
-                                lineNumber: 107,
-                                columnNumber: 7
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: `flex-1 p-2 md:p-3 rounded-lg text-center md:text-left font-medium flex flex-col md:flex-row items-center justify-center md:justify-start transition-all duration-200 ${activeSection === "participants" ? "bg-[#EADBE3] shadow-inner text-[#8D4A6A]" : "hover:bg-[#F3E6EB]"}`,
-                                onClick: ()=>setActiveSection("participants"),
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-lg md:text-base md:mr-3",
-                                        children: "👥"
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 126,
-                                        columnNumber: 9
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-xs md:text-base",
-                                        children: "People"
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 127,
-                                        columnNumber: 9
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/pages/editor/[roomId].js",
-                                lineNumber: 118,
-                                columnNumber: 7
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: `flex-1 p-2 md:p-3 rounded-lg text-center md:text-left font-medium flex flex-col md:flex-row items-center justify-center md:justify-start transition-all duration-200 ${activeSection === "settings" ? "bg-[#EADBE3] shadow-inner text-[#8D4A6A]" : "hover:bg-[#F3E6EB]"}`,
-                                onClick: ()=>setActiveSection("settings"),
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-lg md:text-base md:mr-3",
-                                        children: "⚙️"
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 137,
-                                        columnNumber: 9
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-xs md:text-base",
-                                        children: "Settings"
-                                    }, void 0, false, {
-                                        fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 138,
-                                        columnNumber: 9
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/pages/editor/[roomId].js",
-                                lineNumber: 129,
-                                columnNumber: 7
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                                lineNumber: 50,
+                                columnNumber: 13
+                            }, this))
+                    }, void 0, false, {
                         fileName: "[project]/pages/editor/[roomId].js",
-                        lineNumber: 106,
-                        columnNumber: 5
+                        lineNumber: 48,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mt-4 md:mt-8 flex-1 overflow-y-auto",
@@ -783,55 +692,35 @@ function EditorPage() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                                 className: "text-base md:text-lg font-bold text-[#8D4A6A] mb-2 flex items-center",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "mr-2",
-                                                        children: "👤"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 147,
-                                                        columnNumber: 15
-                                                    }, this),
-                                                    "Username"
-                                                ]
-                                            }, void 0, true, {
+                                                children: "👤 Username"
+                                            }, void 0, false, {
                                                 fileName: "[project]/pages/editor/[roomId].js",
-                                                lineNumber: 146,
-                                                columnNumber: 13
+                                                lineNumber: 69,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "text-sm text-[#5C5C5C] bg-white px-3 py-2 rounded-lg shadow-sm border border-[#E1B7C7]",
                                                 children: username
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/editor/[roomId].js",
-                                                lineNumber: 150,
-                                                columnNumber: 13
+                                                lineNumber: 70,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 145,
-                                        columnNumber: 11
+                                        lineNumber: 68,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                                 className: "text-base md:text-lg font-bold text-[#8D4A6A] mb-2 flex items-center",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "mr-2",
-                                                        children: "#"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 156,
-                                                        columnNumber: 15
-                                                    }, this),
-                                                    "Room ID"
-                                                ]
-                                            }, void 0, true, {
+                                                children: "# Room ID"
+                                            }, void 0, false, {
                                                 fileName: "[project]/pages/editor/[roomId].js",
-                                                lineNumber: 155,
-                                                columnNumber: 13
+                                                lineNumber: 73,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "flex items-center gap-2",
@@ -841,8 +730,8 @@ function EditorPage() {
                                                         children: roomId
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 160,
-                                                        columnNumber: 15
+                                                        lineNumber: 75,
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                         onClick: copyRoomId,
@@ -853,31 +742,31 @@ function EditorPage() {
                                                             color: "white"
                                                         }, void 0, false, {
                                                             fileName: "[project]/pages/editor/[roomId].js",
-                                                            lineNumber: 168,
-                                                            columnNumber: 17
+                                                            lineNumber: 83,
+                                                            columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 163,
-                                                        columnNumber: 15
+                                                        lineNumber: 78,
+                                                        columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/pages/editor/[roomId].js",
-                                                lineNumber: 159,
-                                                columnNumber: 13
+                                                lineNumber: 74,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 154,
-                                        columnNumber: 11
+                                        lineNumber: 72,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/editor/[roomId].js",
-                                lineNumber: 144,
-                                columnNumber: 9
+                                lineNumber: 67,
+                                columnNumber: 13
                             }, this),
                             activeSection === "participants" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-3 md:space-y-4",
@@ -885,28 +774,20 @@ function EditorPage() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "text-base md:text-lg font-bold text-[#8D4A6A] flex items-center",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "mr-2",
-                                                children: "👥"
-                                            }, void 0, false, {
-                                                fileName: "[project]/pages/editor/[roomId].js",
-                                                lineNumber: 178,
-                                                columnNumber: 13
-                                            }, this),
-                                            "Participants",
+                                            "👥 Participants",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "ml-2 bg-[#C890A7] text-white text-xs px-2 py-1 rounded-full",
                                                 children: users.length
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/editor/[roomId].js",
-                                                lineNumber: 180,
-                                                columnNumber: 13
+                                                lineNumber: 94,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 177,
-                                        columnNumber: 11
+                                        lineNumber: 92,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "space-y-2 max-h-32 md:max-h-64 overflow-y-auto pr-1",
@@ -917,33 +798,33 @@ function EditorPage() {
                                                         className: "w-2 md:w-3 h-2 md:h-3 bg-green-400 rounded-full animate-pulse shadow-sm"
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 190,
-                                                        columnNumber: 17
+                                                        lineNumber: 102,
+                                                        columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "text-xs md:text-sm",
                                                         children: user
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 191,
-                                                        columnNumber: 17
+                                                        lineNumber: 103,
+                                                        columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, index, true, {
                                                 fileName: "[project]/pages/editor/[roomId].js",
-                                                lineNumber: 186,
-                                                columnNumber: 15
+                                                lineNumber: 98,
+                                                columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 184,
-                                        columnNumber: 11
+                                        lineNumber: 96,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/editor/[roomId].js",
-                                lineNumber: 176,
-                                columnNumber: 9
+                                lineNumber: 91,
+                                columnNumber: 13
                             }, this),
                             activeSection === "settings" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "space-y-4 md:space-y-5 bg-[#F7EBF0] p-3 md:p-4 rounded-xl shadow-md",
@@ -955,8 +836,8 @@ function EditorPage() {
                                                 children: "Programming Language:"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/editor/[roomId].js",
-                                                lineNumber: 201,
-                                                columnNumber: 13
+                                                lineNumber: 113,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                                 className: "w-full p-2 md:p-3 rounded-lg bg-white text-[#212121] shadow-sm border border-[#E1B7C7] focus:ring-2 focus:ring-[#C890A7] focus:outline-none text-sm",
@@ -968,68 +849,68 @@ function EditorPage() {
                                                         children: "JavaScript"
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 207,
-                                                        columnNumber: 15
+                                                        lineNumber: 119,
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "python",
                                                         children: "Python"
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 208,
-                                                        columnNumber: 15
+                                                        lineNumber: 120,
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "cpp",
                                                         children: "C++"
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 209,
-                                                        columnNumber: 15
+                                                        lineNumber: 121,
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "java",
                                                         children: "Java"
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 210,
-                                                        columnNumber: 15
+                                                        lineNumber: 122,
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "typescript",
                                                         children: "TypeScript"
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 211,
-                                                        columnNumber: 15
+                                                        lineNumber: 123,
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "html",
                                                         children: "HTML"
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 212,
-                                                        columnNumber: 15
+                                                        lineNumber: 124,
+                                                        columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                         value: "css",
                                                         children: "CSS"
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/editor/[roomId].js",
-                                                        lineNumber: 213,
-                                                        columnNumber: 15
+                                                        lineNumber: 125,
+                                                        columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/pages/editor/[roomId].js",
-                                                lineNumber: 202,
-                                                columnNumber: 13
+                                                lineNumber: 114,
+                                                columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 200,
-                                        columnNumber: 11
+                                        lineNumber: 112,
+                                        columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "pt-1 md:pt-2",
@@ -1042,32 +923,32 @@ function EditorPage() {
                                                     children: theme === "vs-dark" ? "☀️" : "🌙"
                                                 }, void 0, false, {
                                                     fileName: "[project]/pages/editor/[roomId].js",
-                                                    lineNumber: 222,
-                                                    columnNumber: 15
+                                                    lineNumber: 133,
+                                                    columnNumber: 19
                                                 }, this),
                                                 theme === "vs-dark" ? "Switch to Light Mode" : "Switch to Dark Mode"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/pages/editor/[roomId].js",
-                                            lineNumber: 218,
-                                            columnNumber: 13
+                                            lineNumber: 129,
+                                            columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 217,
-                                        columnNumber: 11
+                                        lineNumber: 128,
+                                        columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/editor/[roomId].js",
-                                lineNumber: 199,
-                                columnNumber: 9
+                                lineNumber: 111,
+                                columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/editor/[roomId].js",
-                        lineNumber: 142,
-                        columnNumber: 5
+                        lineNumber: 65,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mt-4 md:mt-6 pt-2 md:pt-4 border-t border-[#E1B7C7] hidden md:block",
@@ -1078,26 +959,26 @@ function EditorPage() {
                                     className: "w-2 h-2 bg-green-400 rounded-full mr-2"
                                 }, void 0, false, {
                                     fileName: "[project]/pages/editor/[roomId].js",
-                                    lineNumber: 233,
-                                    columnNumber: 9
+                                    lineNumber: 142,
+                                    columnNumber: 13
                                 }, this),
                                 "Connected"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/pages/editor/[roomId].js",
-                            lineNumber: 232,
-                            columnNumber: 7
+                            lineNumber: 141,
+                            columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/editor/[roomId].js",
-                        lineNumber: 231,
-                        columnNumber: 5
+                        lineNumber: 140,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/editor/[roomId].js",
-                lineNumber: 99,
-                columnNumber: 3
+                lineNumber: 42,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "w-full md:w-4/5 flex flex-col p-3 md:p-6 flex-1",
@@ -1112,40 +993,40 @@ function EditorPage() {
                                         className: "h-2 md:h-3 w-2 md:w-3 bg-green-400 rounded-full mr-2 animate-pulse"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 243,
-                                        columnNumber: 9
+                                        lineNumber: 152,
+                                        columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                         className: "font-bold text-base md:text-lg text-[#8D4A6A]",
                                         children: "Live Editing"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/editor/[roomId].js",
-                                        lineNumber: 244,
-                                        columnNumber: 9
+                                        lineNumber: 153,
+                                        columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/editor/[roomId].js",
-                                lineNumber: 242,
-                                columnNumber: 7
+                                lineNumber: 151,
+                                columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "text-xs md:text-sm text-[#5C5C5C] bg-[#F7EBF0] px-2 md:px-3 py-1 rounded-lg",
                                 children: language.charAt(0).toUpperCase() + language.slice(1)
                             }, void 0, false, {
                                 fileName: "[project]/pages/editor/[roomId].js",
-                                lineNumber: 246,
-                                columnNumber: 7
+                                lineNumber: 155,
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/editor/[roomId].js",
-                        lineNumber: 241,
-                        columnNumber: 5
+                        lineNumber: 150,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "flex-1 rounded-xl overflow-hidden shadow-lg md:shadow-2xl border border-[#E1B7C7]",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$monaco$2d$editor$2f$react$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"], {
+                        children: isClient && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$monaco$2d$editor$2f$react$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"], {
                             height: "100%",
                             width: "100%",
                             language: language,
@@ -1162,7 +1043,7 @@ function EditorPage() {
                                 fontSize: 14,
                                 fontFamily: "'Fira Code', monospace",
                                 minimap: {
-                                    enabled: window.innerWidth > 768
+                                    enabled: "object" !== "undefined" && window.innerWidth > 768
                                 },
                                 scrollBeyondLastLine: false,
                                 roundedSelection: true,
@@ -1173,28 +1054,28 @@ function EditorPage() {
                             }
                         }, void 0, false, {
                             fileName: "[project]/pages/editor/[roomId].js",
-                            lineNumber: 252,
-                            columnNumber: 7
+                            lineNumber: 162,
+                            columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/pages/editor/[roomId].js",
-                        lineNumber: 251,
-                        columnNumber: 5
+                        lineNumber: 160,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/editor/[roomId].js",
-                lineNumber: 240,
-                columnNumber: 3
+                lineNumber: 149,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/pages/editor/[roomId].js",
-        lineNumber: 97,
-        columnNumber: 8
+        lineNumber: 40,
+        columnNumber: 5
     }, this);
 }
-_s(EditorPage, "vAp8vsCp4Uk9kA6JQ3RiKxXUxTc=", false, function() {
+_s(EditorPage, "IqDXDF1I15P5tia97v/JWcWWIt4=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
