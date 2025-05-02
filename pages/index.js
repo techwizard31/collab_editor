@@ -91,7 +91,7 @@ export default function Home() {
       {/* Hero image section */}
 <div className="w-full flex justify-center items-center overflow-hidden rounded">
   <img
-    src="/9959236.jpg"
+    src="/4b7b8722-bd86-4ed2-a387-c550f87fc9db_removalai_preview.png"
     alt="Collaborative coding"
     width={1000}
     height={550}

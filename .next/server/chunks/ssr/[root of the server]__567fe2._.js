@@ -373,7 +373,7 @@ function Home() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                 className: "w-full flex justify-center items-center overflow-hidden rounded",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
-                    src: "/9959236.jpg",
+                    src: "/4b7b8722-bd86-4ed2-a387-c550f87fc9db_removalai_preview.png",
                     alt: "Collaborative coding",
                     width: 1000,
                     height: 550,
