@@ -2,6 +2,6 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 65, "column": 0}, "map": {"version":3,"sources":["file://D%3A/Coding/Next.js/collab_editor/pages/_app.js"],"sourcesContent":["import \"../styles/globals.css\";\r\nimport { Toaster } from \"react-hot-toast\";\r\n\r\nfunction MyApp({ Component, pageProps }) {\r\n  return (\r\n    <>\r\n      <div>\r\n        <Toaster position=\"top-center\" />\r\n      </div>\r\n      <Component {...pageProps} />\r\n    </>\r\n  );\r\n}\r\n\r\nexport default MyApp;\r\n"],"names":[],"mappings":";;;;AACA;;;;;;;;AAEA,SAAS,MAAM,EAAE,SAAS,EAAE,SAAS,EAAE;IACrC,qBACE;;0BACE,qKAAC;0BACC,cAAA,qKAAC,0IAAA,CAAA,UAAO;oBAAC,UAAS;;;;;;;;;;;0BAEpB,qKAAC;gBAAW,GAAG,SAAS;;;;;;;;AAG9B;uCAEe"}},
+    {"offset": {"line": 65, "column": 0}, "map": {"version":3,"sources":["file:///Users/sujalkumaragarwal911/Desktop/dummy/collab_editor/pages/_app.js"],"sourcesContent":["import \"../styles/globals.css\";\r\nimport { Toaster } from \"react-hot-toast\";\r\n\r\nfunction MyApp({ Component, pageProps }) {\r\n  return (\r\n    <>\r\n      <div>\r\n        <Toaster position=\"top-center\" />\r\n      </div>\r\n      <Component {...pageProps} />\r\n    </>\r\n  );\r\n}\r\n\r\nexport default MyApp;\r\n"],"names":[],"mappings":";;;;AACA;;;;;;;;AAEA,SAAS,MAAM,EAAE,SAAS,EAAE,SAAS,EAAE;IACrC,qBACE;;0BACE,qKAAC;0BACC,cAAA,qKAAC,0IAAA,CAAA,UAAO;oBAAC,UAAS;;;;;;;;;;;0BAEpB,qKAAC;gBAAW,GAAG,SAAS;;;;;;;;AAG9B;uCAEe"}},
     {"offset": {"line": 104, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
 }
