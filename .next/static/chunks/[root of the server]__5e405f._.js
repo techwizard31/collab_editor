@@ -634,7 +634,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 var { r: __turbopack_require__, f: __turbopack_module_context__, i: __turbopack_import__, s: __turbopack_esm__, v: __turbopack_export_value__, n: __turbopack_export_namespace__, c: __turbopack_cache__, M: __turbopack_modules__, l: __turbopack_load__, j: __turbopack_dynamic__, P: __turbopack_resolve_absolute_path__, U: __turbopack_relative_url__, R: __turbopack_resolve_module_id_path__, b: __turbopack_worker_blob_url__, g: global, __dirname, t: __turbopack_require_real__ } = __turbopack_context__;
 {
-__turbopack_export_value__("/_next/static/media/10276612_4421959.af65989b.svg");}}),
+__turbopack_export_value__("/_next/static/media/10276612_4421959.622c9752.svg");}}),
 "[project]/public/10276612_4421959.svg.mjs { IMAGE => \"[project]/public/10276612_4421959.svg [client] (static)\" } [client] (structured image object, ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
@@ -720,7 +720,7 @@ function Home() {
         className: "flex flex-col items-center w-full mx-auto p-0 m-0 bg-[#FBF5E5]",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                className: "text-4xl py-4 font-bold mb-6 text-[#212121]",
+                className: "text-4xl py-4 font-bold mb-6 text-[#522546]",
                 children: "Collaborative Code Editor"
             }, void 0, false, {
                 fileName: "[project]/pages/index.js",
@@ -757,17 +757,10 @@ function Home() {
                 columnNumber: 1
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-<<<<<<< HEAD
-                className: "flex justify-between mb-8 w-full",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        className: "text-[#C890A7] p-2 rounded bg-[#FBF5E5] border-2 border-[#C890A7]",
-=======
                 className: "flex flex-wrap justify-center gap-4 mb-8 w-full",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         className: "w-32 sm:w-36 text-[#C890A7] p-2 rounded bg-[#FBF5E5] border-2 border-[#C890A7]",
->>>>>>> b5cd9c6464aeed64745c7bac2fd3a0b2b4ac7a9a
                         onClick: joinRoom,
                         children: "Join Room"
                     }, void 0, false, {
@@ -776,11 +769,7 @@ function Home() {
                         columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-<<<<<<< HEAD
-                        className: "text-[#C890A7] p-2 rounded bg-[#FBF5E5] border-2 border-[#C890A7]",
-=======
                         className: "w-32 sm:w-36 text-[#C890A7] p-2 rounded bg-[#FBF5E5] border-2 border-[#C890A7]",
->>>>>>> b5cd9c6464aeed64745c7bac2fd3a0b2b4ac7a9a
                         onClick: generateRoomId,
                         children: "Create Room"
                     }, void 0, false, {

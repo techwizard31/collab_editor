@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 body {
-  font-family: Arial, sans-serif;
+  font-family: Oxanium, sans-serif;
   margin: 0;
   padding: 0;
   text-align: center;

@@ -615,10 +615,10 @@ function EditorPage() {
         alert("Room ID copied to clipboard!");
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex flex-col md:flex-row h-screen bg-[#FBF5E5] text-[#212121] font-sans",
+        className: "flex flex-col md:flex-row h-screen bg-[#FBF5E5] text-[#212121]",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "w-full md:w-1/5 p-4 md:p-6 bg-[#FFF0F6] shadow-md md:shadow-2xl flex flex-col border-b md:border-r md:border-b-0 border-[#E1B7C7]",
+                className: "w-full md:w-1/5 p-4 md:p-4 lg:p-4 bg-[#FFF0F6] shadow-md md:shadow-2xl flex flex-col border-b md:border-r md:border-b-0 border-[#E1B7C7]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mb-6 text-center",
@@ -652,7 +652,7 @@ function EditorPage() {
                             "participants",
                             "settings"
                         ].map((section)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: `flex-1 p-2 md:p-3 rounded-lg font-medium flex flex-col md:flex-row items-center justify-center md:justify-start transition-all duration-200 ${activeSection === section ? "bg-[#EADBE3] shadow-inner text-[#8D4A6A]" : "hover:bg-[#F3E6EB]"}`,
+                                className: `flex-1 p-2 md:p-3 rounded-lg font-medium flex flex-col md:flex-row items-center justify-center md:justify-start transition-all duration-200 mt-2 ${activeSection === section ? "bg-[#EADBE3] shadow-inner text-[#8D4A6A]" : "hover:bg-[#F3E6EB]"}`,
                                 onClick: ()=>setActiveSection(section),
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -984,7 +984,7 @@ function EditorPage() {
                 className: "w-full md:w-4/5 flex flex-col p-3 md:p-6 flex-1",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mb-2 md:mb-4 flex justify-between items-center",
+                        className: "mb-2 md:mb-6 flex justify-between items-center",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex items-center",

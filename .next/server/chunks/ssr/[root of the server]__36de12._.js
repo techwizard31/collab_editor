@@ -158,18 +158,10 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$run
 var __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__ = __turbopack_import__("[externals]/react [external] (react, cjs)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/router.js [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$uuid__$5b$external$5d$__$28$uuid$2c$__esm_import$29$__ = __turbopack_import__("[externals]/uuid [external] (uuid, esm_import)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/image.js [ssr] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '../public/995.jpg'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
 var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
     __TURBOPACK__imported__module__$5b$externals$5d2f$uuid__$5b$external$5d$__$28$uuid$2c$__esm_import$29$__
 ]);
 ([__TURBOPACK__imported__module__$5b$externals$5d2f$uuid__$5b$external$5d$__$28$uuid$2c$__esm_import$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
-;
-;
 ;
 ;
 ;
@@ -206,94 +198,95 @@ function Home() {
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-        className: "flex flex-col items-center w-full mx-auto p-0 m-0",
+        className: "flex flex-col items-center w-full mx-auto p-0 m-0 bg-[#FBF5E5]",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
-                className: "text-2xl font-bold mb-6",
+                className: "text-4xl py-4 font-bold mb-6 text-[#522546]",
                 children: "Collaborative Code Editor"
             }, void 0, false, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 50,
+                lineNumber: 48,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "flex flex-col sm:flex-row gap-4 w-full mb-6",
+                className: "flex flex-col sm:flex-row justify-center items-center w-full gap-4 mb-6 px-4",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
-                        className: "p-2 border rounded flex-1",
+                        className: "w-full sm:w-64 py-3 text-center rounded bg-[#FBF5E5] border-2 border-[#522546] placeholder:text-[#C890A7] text-[#522546]",
                         placeholder: "Username",
                         value: username,
                         onChange: (e)=>setUsername(e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 54,
-                        columnNumber: 9
+                        lineNumber: 52,
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
-                        className: "p-2 border rounded flex-1",
+                        className: "w-full sm:w-64 p-3 text-center rounded bg-[#FBF5E5] border-2 border-[#522546] placeholder:text-[#C890A7] text-[#522546]",
                         placeholder: "Room ID",
                         value: roomId,
                         onChange: (e)=>setRoomId(e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 60,
-                        columnNumber: 9
+                        lineNumber: 58,
+                        columnNumber: 3
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 53,
-                columnNumber: 7
+                lineNumber: 51,
+                columnNumber: 1
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "flex gap-8 mb-8 w-full",
+                className: "flex flex-wrap justify-center gap-4 mb-8 w-full",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                        className: "bg-blue-500 text-white p-2 rounded flex-1",
+                        className: "w-32 sm:w-36 text-[#522546] p-2 rounded bg-[#FBF5E5] border-2 border-[#522546] hover:scale-105 transition-all duration-150",
                         onClick: joinRoom,
                         children: "Join Room"
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 70,
-                        columnNumber: 9
+                        lineNumber: 69,
+                        columnNumber: 3
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                        className: "bg-green-500 text-white p-2 rounded flex-1",
+                        className: "w-32 sm:w-36 text-[#522546] p-2 rounded bg-[#FBF5E5] border-2 border-[#522546] hover:scale-105 transition-all duration-150",
                         onClick: generateRoomId,
                         children: "Create Room"
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 76,
-                        columnNumber: 9
+                        lineNumber: 75,
+                        columnNumber: 3
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 69,
-                columnNumber: 7
+                lineNumber: 68,
+                columnNumber: 1
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-                className: "w-[35%] h-fit overflow-hidden rounded",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                    src: Hero,
+                className: "w-full flex justify-center items-center overflow-hidden rounded",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("img", {
+                    src: "/1.png",
                     alt: "Collaborative coding",
-                    width: 800,
-                    height: 500,
-                    className: "object-cover"
+                    width: 1000,
+                    height: 550,
+                    loading: "lazy",
+                    className: "object-cover rounded"
                 }, void 0, false, {
                     fileName: "[project]/pages/index.js",
-                    lineNumber: 86,
-                    columnNumber: 9
+                    lineNumber: 87,
+                    columnNumber: 3
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 85,
-                columnNumber: 7
+                lineNumber: 86,
+                columnNumber: 1
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/pages/index.js",
-        lineNumber: 49,
+        lineNumber: 47,
         columnNumber: 5
     }, this);
 }

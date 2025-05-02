@@ -37,9 +37,9 @@ export default function EditorPage() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen bg-[#FBF5E5] text-[#212121] font-sans">
+    <div className="flex flex-col md:flex-row h-screen bg-[#FBF5E5] text-[#212121]">
       {/* Sidebar */}
-      <div className="w-full md:w-1/5 p-4 md:p-6 bg-[#FFF0F6] shadow-md md:shadow-2xl flex flex-col border-b md:border-r md:border-b-0 border-[#E1B7C7]">
+      <div className="w-full md:w-1/5 p-4 md:p-4 lg:p-4 bg-[#FFF0F6] shadow-md md:shadow-2xl flex flex-col border-b md:border-r md:border-b-0 border-[#E1B7C7]">
         <div className="mb-6 text-center">
           <h1 className="text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-[#C890A7] to-[#A7678C] text-transparent bg-clip-text">CodeCollab</h1>
           <p className="text-xs text-[#5C5C5C] mt-1 hidden md:block">Real-time collaborative editor</p>
@@ -49,7 +49,7 @@ export default function EditorPage() {
           {["roomInfo", "participants", "settings"].map((section) => (
             <button
               key={section}
-              className={`flex-1 p-2 md:p-3 rounded-lg font-medium flex flex-col md:flex-row items-center justify-center md:justify-start transition-all duration-200 ${
+              className={`flex-1 p-2 md:p-3 rounded-lg font-medium flex flex-col md:flex-row items-center justify-center md:justify-start transition-all duration-200 mt-2 ${
                 activeSection === section ? "bg-[#EADBE3] shadow-inner text-[#8D4A6A]" : "hover:bg-[#F3E6EB]"
               }`}
               onClick={() => setActiveSection(section)}
@@ -147,7 +147,7 @@ export default function EditorPage() {
 
       {/* Editor Section */}
       <div className="w-full md:w-4/5 flex flex-col p-3 md:p-6 flex-1">
-        <div className="mb-2 md:mb-4 flex justify-between items-center">
+        <div className="mb-2 md:mb-6 flex justify-between items-center">
           <div className="flex items-center">
             <div className="h-2 md:h-3 w-2 md:w-3 bg-green-400 rounded-full mr-2 animate-pulse"></div>
             <h2 className="font-bold text-base md:text-lg text-[#8D4A6A]">Live Editing</h2>
