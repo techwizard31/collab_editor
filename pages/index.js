@@ -69,15 +69,15 @@ export default function Home() {
       </div>
 
       {/* Buttons section */}
-      <div className="flex gap-8 mb-8 w-full">
+      <div className="flex justify-between mb-8 w-full">
         <button
-          className="text-[#C890A7] p-2 rounded flex-1 bg-[#FBF5E5] border-2 border-[#C890A7]"
+          className="text-[#C890A7] p-2 rounded bg-[#FBF5E5] border-2 border-[#C890A7]"
           onClick={joinRoom}
         >
           Join Room
         </button>
         <button
-          className="text-[#C890A7] p-2 rounded flex-1 bg-[#FBF5E5] border-2 border-[#C890A7]"
+          className="text-[#C890A7] p-2 rounded bg-[#FBF5E5] border-2 border-[#C890A7]"
           onClick={generateRoomId}
         >
           Create Room

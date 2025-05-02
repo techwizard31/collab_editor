@@ -757,10 +757,10 @@ function Home() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex gap-8 mb-8 w-full",
+                className: "flex justify-between mb-8 w-full",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        className: "text-[#C890A7] p-2 rounded flex-1 bg-[#FBF5E5] border-2 border-[#C890A7]",
+                        className: "text-[#C890A7] p-2 rounded bg-[#FBF5E5] border-2 border-[#C890A7]",
                         onClick: joinRoom,
                         children: "Join Room"
                     }, void 0, false, {
@@ -769,7 +769,7 @@ function Home() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        className: "text-[#C890A7] p-2 rounded flex-1 bg-[#FBF5E5] border-2 border-[#C890A7]",
+                        className: "text-[#C890A7] p-2 rounded bg-[#FBF5E5] border-2 border-[#C890A7]",
                         onClick: generateRoomId,
                         children: "Create Room"
                     }, void 0, false, {
