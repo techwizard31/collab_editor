@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file://D%3A/Coding/Next.js/collab_editor/styles/globals.css"],"sourcesContent":["body {\r\n  font-family: Arial, sans-serif;\r\n  margin: 0;\r\n  padding: 0;\r\n  text-align: center;\r\n}\r\ninput {\r\n  margin: 10px;\r\n  padding: 8px;\r\n  width: 200px;\r\n}\r\nbutton {\r\n  padding: 10px;\r\n  cursor: pointer;\r\n}\r\n#editor {\r\n  margin: 0 auto;\r\n  width: 80%;\r\n  height: 500px;\r\n}"],"names":[],"mappings":"AAAA,uEAMA,0CAKA,mCAIA"}},
+    {"offset": {"line": 1, "column": 193}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
