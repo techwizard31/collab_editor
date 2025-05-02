@@ -17,14 +17,6 @@
       "static/chunks/pages_index_5771e1._.js",
       "static/chunks/pages_index_3a8f61._.js"
     ],
-    "/editor/[roomId]": [
-      "static/chunks/node_modules_next_71458a._.js",
-      "static/chunks/node_modules_react-dom_82bb97._.js",
-      "static/chunks/node_modules_1ae7fc._.js",
-      "static/chunks/[root of the server]__72e8f2._.js",
-      "static/chunks/pages_editor_[roomId]_5771e1.js",
-      "static/chunks/pages_editor_[roomId]_4adc86.js"
-    ],
     "/_error": [
       "static/chunks/[root of the server]__31723f._.js",
       "static/chunks/node_modules_react-dom_82bb97._.js",
@@ -32,6 +24,14 @@
       "static/chunks/[root of the server]__2e1cf5._.js",
       "static/chunks/pages__error_5771e1._.js",
       "static/chunks/pages__error_b8c4c3._.js"
+    ],
+    "/editor/[roomId]": [
+      "static/chunks/node_modules_next_71458a._.js",
+      "static/chunks/node_modules_react-dom_82bb97._.js",
+      "static/chunks/node_modules_1ae7fc._.js",
+      "static/chunks/[root of the server]__72e8f2._.js",
+      "static/chunks/pages_editor_[roomId]_5771e1.js",
+      "static/chunks/pages_editor_[roomId]_4adc86.js"
     ]
   },
   "devFiles": [],
