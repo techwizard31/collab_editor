@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import Editor from "@monaco-editor/react";
 import { Copy } from "lucide-react";
-import { toast, Slide } from 'react-toastify';
+import { toast, Slide } from "react-toastify";
 
-const socket = io("http://localhost:3001");
+const socket = io("http://localhost:4000");
 
 export default function EditorPage() {
   const router = useRouter();
@@ -35,25 +35,63 @@ export default function EditorPage() {
   const copyRoomId = () => {
     navigator.clipboard.writeText(roomId);
     toast.info("Room Id Copied", {
-            position: "top-center",
-            autoClose: 500,
-            hideProgressBar: true,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            transition: Slide,
-          })
+      position: "top-center",
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Slide,
+    });
+  };
+
+  const downloadCode = () => {
+    const extensionMap = {
+      javascript: "js",
+      python: "py",
+      cpp: "cpp",
+      java: "java",
+      typescript: "ts",
+      html: "html",
+      css: "css",
+    };
+
+    const fileExtension = extensionMap[language] || "txt";
+    const blob = new Blob([code], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `code.${fileExtension}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+
+    toast.success("Code downloaded successfully!", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      theme: "colored",
+      transition: Slide,
+    });
   };
 
   return (
     <div className="flex flex-col md:flex-row h-screen bg-[#FBF5E5] text-[#212121]">
       {/* Sidebar */}
-      <div className="w-full md:w-1/5 p-4 md:p-4 lg:p-4 bg-[#FFF0F6] shadow-md md:shadow-2xl flex flex-col border-b md:border-r md:border-b-0 border-[#E1B7C7]">
+      <div className="w-full md:w-1/5 p-4 bg-[#FFF0F6] shadow-md md:shadow-2xl flex flex-col border-b md:border-r md:border-b-0 border-[#E1B7C7]">
         <div className="mb-6 text-center">
-          <h1 className="text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-[#C890A7] to-[#A7678C] text-transparent bg-clip-text">CodeCollab</h1>
-          <p className="text-xs text-[#5C5C5C] mt-1 hidden md:block">Real-time collaborative editor</p>
+          <h1 className="text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-[#C890A7] to-[#A7678C] text-transparent bg-clip-text">
+            CodeCollab
+          </h1>
+          <p className="text-xs text-[#5C5C5C] mt-1 hidden md:block">
+            Real-time collaborative editor
+          </p>
         </div>
 
         <nav className="flex md:block">
@@ -61,14 +99,22 @@ export default function EditorPage() {
             <button
               key={section}
               className={`flex-1 p-2 md:p-3 rounded-lg font-medium flex flex-col md:flex-row items-center justify-center md:justify-start transition-all duration-200 mt-2 ${
-                activeSection === section ? "bg-[#EADBE3] shadow-inner text-[#8D4A6A]" : "hover:bg-[#F3E6EB]"
+                activeSection === section
+                  ? "bg-[#EADBE3] shadow-inner text-[#8D4A6A]"
+                  : "hover:bg-[#F3E6EB]"
               }`}
               onClick={() => setActiveSection(section)}
             >
               <span className="text-lg md:text-base md:mr-3">
-                {section === "roomInfo" ? "🏠" : section === "participants" ? "👥" : "⚙️"}
+                {section === "roomInfo"
+                  ? "🏠"
+                  : section === "participants"
+                  ? "👥"
+                  : "⚙️"}
               </span>
-              <span className="text-xs md:text-base capitalize">{section.replace("Info", "")}</span>
+              <span className="text-xs md:text-base capitalize">
+                {section.replace("Info", "")}
+              </span>
             </button>
           ))}
         </nav>
@@ -77,11 +123,17 @@ export default function EditorPage() {
           {activeSection === "roomInfo" && (
             <div className="space-y-4 md:space-y-6 bg-[#F7EBF0] p-3 md:p-4 rounded-xl shadow-md">
               <div>
-                <h2 className="text-base md:text-lg font-bold text-[#8D4A6A] mb-2 flex items-center">👤 Username</h2>
-                <div className="text-sm text-[#5C5C5C] bg-white px-3 py-2 rounded-lg shadow-sm border border-[#E1B7C7]">{username}</div>
+                <h2 className="text-base md:text-lg font-bold text-[#8D4A6A] mb-2">
+                  👤 Username
+                </h2>
+                <div className="text-sm text-[#5C5C5C] bg-white px-3 py-2 rounded-lg shadow-sm border border-[#E1B7C7]">
+                  {username}
+                </div>
               </div>
               <div>
-                <h2 className="text-base md:text-lg font-bold text-[#8D4A6A] mb-2 flex items-center"># Room ID</h2>
+                <h2 className="text-base md:text-lg font-bold text-[#8D4A6A] mb-2">
+                  # Room ID
+                </h2>
                 <div className="flex items-center gap-2">
                   <div className="text-sm text-[#5C5C5C] bg-white px-3 py-2 rounded-lg shadow-sm border border-[#E1B7C7] flex-1 truncate">
                     {roomId}
@@ -100,9 +152,11 @@ export default function EditorPage() {
 
           {activeSection === "participants" && (
             <div className="space-y-3 md:space-y-4">
-              <h3 className="text-base md:text-lg font-bold text-[#8D4A6A] flex items-center">
-                👥 Participants
-                <span className="ml-2 bg-[#C890A7] text-white text-xs px-2 py-1 rounded-full">{users.length}</span>
+              <h3 className="text-base md:text-lg font-bold text-[#8D4A6A]">
+                👥 Participants{" "}
+                <span className="ml-2 bg-[#C890A7] text-white text-xs px-2 py-1 rounded-full">
+                  {users.length}
+                </span>
               </h3>
               <div className="space-y-2 max-h-32 md:max-h-64 overflow-y-auto pr-1">
                 {users.map((user, index) => (
@@ -121,7 +175,9 @@ export default function EditorPage() {
           {activeSection === "settings" && (
             <div className="space-y-4 md:space-y-5 bg-[#F7EBF0] p-3 md:p-4 rounded-xl shadow-md">
               <div>
-                <label className="block text-xs md:text-sm font-medium text-[#8D4A6A] mb-2">Programming Language:</label>
+                <label className="block text-xs md:text-sm font-medium text-[#8D4A6A] mb-2">
+                  Programming Language:
+                </label>
                 <select
                   className="w-full p-2 md:p-3 rounded-lg bg-white text-[#212121] shadow-sm border border-[#E1B7C7] focus:ring-2 focus:ring-[#C890A7] focus:outline-none text-sm"
                   value={language}
@@ -139,16 +195,31 @@ export default function EditorPage() {
               <div className="pt-1 md:pt-2">
                 <button
                   className="w-full p-2 md:p-3 bg-[#C890A7] text-white rounded-lg hover:bg-[#b57a94] shadow-md transform hover:scale-105 transition-all duration-200 flex items-center justify-center font-medium text-sm"
-                  onClick={() => setTheme(theme === "vs-dark" ? "light" : "vs-dark")}
+                  onClick={() =>
+                    setTheme(theme === "vs-dark" ? "light" : "vs-dark")
+                  }
                 >
-                  <span className="mr-2">{theme === "vs-dark" ? "☀️" : "🌙"}</span>
-                  {theme === "vs-dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                  <span className="mr-2">
+                    {theme === "vs-dark" ? "☀️" : "🌙"}
+                  </span>
+                  {theme === "vs-dark"
+                    ? "Switch to Light Mode"
+                    : "Switch to Dark Mode"}
+                </button>
+              </div>
+              <div className="pt-1 md:pt-2">
+                <button
+                  className="w-full p-2 md:p-3 bg-[#C890A7] text-white rounded-lg hover:bg-[#b57a94] shadow-md transform hover:scale-105 transition-all duration-200 flex items-center justify-center font-medium text-sm"
+                  onClick={downloadCode}
+                >
+                  ⬇️ Download Code
                 </button>
               </div>
             </div>
           )}
         </div>
-        <div className="mt-4 md:mt-6 pt-2 md:pt-4 border-t border-[#E1B7C7] hidden md:block">
+
+        <div className="mt-4 pt-2 border-t border-[#E1B7C7] hidden md:block">
           <div className="flex items-center text-xs text-[#5C5C5C]">
             <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
             Connected
@@ -161,7 +232,9 @@ export default function EditorPage() {
         <div className="mb-2 md:mb-6 flex justify-between items-center">
           <div className="flex items-center">
             <div className="h-2 md:h-3 w-2 md:w-3 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-            <h2 className="font-bold text-base md:text-lg text-[#8D4A6A]">Live Editing</h2>
+            <h2 className="font-bold text-base md:text-lg text-[#8D4A6A]">
+              Live Editing
+            </h2>
           </div>
           <div className="text-xs md:text-sm text-[#5C5C5C] bg-[#F7EBF0] px-2 md:px-3 py-1 rounded-lg">
             {language.charAt(0).toUpperCase() + language.slice(1)}
@@ -183,7 +256,10 @@ export default function EditorPage() {
               options={{
                 fontSize: 14,
                 fontFamily: "'Fira Code', monospace",
-                minimap: { enabled: typeof window !== "undefined" && window.innerWidth > 768 },
+                minimap: {
+                  enabled:
+                    typeof window !== "undefined" && window.innerWidth > 768,
+                },
                 scrollBeyondLastLine: false,
                 roundedSelection: true,
                 padding: { top: 16 },
