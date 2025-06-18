@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import io from "socket.io-client";
 import Editor from "@monaco-editor/react";
 import { Copy } from "lucide-react";
+import { toast, Slide } from 'react-toastify';
 
 const socket = io("http://localhost:3001");
 
@@ -33,7 +34,17 @@ export default function EditorPage() {
 
   const copyRoomId = () => {
     navigator.clipboard.writeText(roomId);
-    alert("Room ID copied to clipboard!");
+    toast.info("Room Id Copied", {
+            position: "top-center",
+            autoClose: 500,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Slide,
+          })
   };
 
   return (

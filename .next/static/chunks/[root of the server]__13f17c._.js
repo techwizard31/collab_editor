@@ -560,9 +560,11 @@ __turbopack_esm__({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/jsx-dev-runtime.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react/index.js [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/router.js [client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/react-toastify/dist/index.mjs [client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$uuid$2f$dist$2f$esm$2d$browser$2f$v4$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__v4$3e$__ = __turbopack_import__("[project]/node_modules/uuid/dist/esm-browser/v4.js [client] (ecmascript) <export default as v4>");
 ;
 var _s = __turbopack_refresh__.signature();
+;
 ;
 ;
 ;
@@ -575,7 +577,27 @@ function Home() {
         const newRoomId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$uuid$2f$dist$2f$esm$2d$browser$2f$v4$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__default__as__v4$3e$__["v4"])();
         setRoomId(newRoomId);
         if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
-            navigator.clipboard.writeText(newRoomId).then(()=>alert("Room ID copied to clipboard!")).catch(()=>alert("Copy manually: " + newRoomId));
+            navigator.clipboard.writeText(newRoomId).then(()=>__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].info("Room Id Copied", {
+                    position: "top-center",
+                    autoClose: 500,
+                    hideProgressBar: true,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["Slide"]
+                })).catch(()=>__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].info("Copy manually: " + newRoomId, {
+                    position: "top-center",
+                    autoClose: 500,
+                    hideProgressBar: true,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["Slide"]
+                }));
         } else {
             // Fallback for unsupported browsers
             const textArea = document.createElement("textarea");
@@ -584,9 +606,29 @@ function Home() {
             textArea.select();
             try {
                 document.execCommand("copy");
-                alert("Room ID copied to clipboard!");
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].info("Room Id Copied", {
+                    position: "top-center",
+                    autoClose: 500,
+                    hideProgressBar: true,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["Slide"]
+                });
             } catch  {
-                alert("Copy manually: " + newRoomId);
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].info("Copy manually: " + newRoomId, {
+                    position: "top-center",
+                    autoClose: 500,
+                    hideProgressBar: true,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["Slide"]
+                });
             }
             document.body.removeChild(textArea);
         }
@@ -595,7 +637,17 @@ function Home() {
         if (roomId && username) {
             router.push(`/editor/${roomId}?username=${username}`);
         } else {
-            alert("Enter username and room ID");
+            __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["toast"].error("Enter username and Room Id", {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: true,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$toastify$2f$dist$2f$index$2e$mjs__$5b$client$5d$__$28$ecmascript$29$__["Slide"]
+            });
         }
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -606,7 +658,7 @@ function Home() {
                 children: "Collaborative Code Editor"
             }, void 0, false, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 48,
+                lineNumber: 103,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -619,8 +671,8 @@ function Home() {
                         onChange: (e)=>setUsername(e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 52,
-                        columnNumber: 3
+                        lineNumber: 109,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                         className: "w-full sm:w-64 p-3 text-center rounded bg-[#FBF5E5] border-2 border-[#522546] placeholder:text-[#C890A7] text-[#522546]",
@@ -629,14 +681,14 @@ function Home() {
                         onChange: (e)=>setRoomId(e.target.value)
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 58,
-                        columnNumber: 3
+                        lineNumber: 115,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 51,
-                columnNumber: 1
+                lineNumber: 108,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "flex flex-wrap justify-center gap-4 mb-8 w-full",
@@ -647,8 +699,8 @@ function Home() {
                         children: "Join Room"
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 69,
-                        columnNumber: 3
+                        lineNumber: 125,
+                        columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         className: "w-32 sm:w-36 text-[#522546] p-2 rounded bg-[#FBF5E5] border-2 border-[#522546] hover:scale-105 transition-all duration-150",
@@ -656,14 +708,14 @@ function Home() {
                         children: "Create Room"
                     }, void 0, false, {
                         fileName: "[project]/pages/index.js",
-                        lineNumber: 75,
-                        columnNumber: 3
+                        lineNumber: 131,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 68,
-                columnNumber: 1
+                lineNumber: 124,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "w-full flex justify-center items-center overflow-hidden rounded",
@@ -676,18 +728,18 @@ function Home() {
                     className: "object-cover rounded"
                 }, void 0, false, {
                     fileName: "[project]/pages/index.js",
-                    lineNumber: 87,
-                    columnNumber: 3
+                    lineNumber: 141,
+                    columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/index.js",
-                lineNumber: 86,
-                columnNumber: 1
+                lineNumber: 140,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/pages/index.js",
-        lineNumber: 47,
+        lineNumber: 102,
         columnNumber: 5
     }, this);
 }
