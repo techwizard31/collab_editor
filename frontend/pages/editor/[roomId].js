@@ -6,7 +6,20 @@ import Editor from "@monaco-editor/react";
 import { Copy } from "lucide-react";
 import { toast, Slide } from "react-toastify";
 
-const socket = io("http://localhost:4000");
+// Dynamic socket connection based on environment
+const getSocketUrl = () => {
+  if (typeof window !== 'undefined') {
+    // In production, use the same domain (nginx will proxy to port 4000)
+    if (window.location.hostname === 'collabeditor.xyz') {
+      return 'https://collabeditor.xyz';
+    }
+    // For development
+    return 'http://localhost:4000';
+  }
+  return 'http://localhost:4000';
+};
+
+let socket = null;
 
 export default function EditorPage() {
   const router = useRouter();
@@ -17,20 +30,60 @@ export default function EditorPage() {
   const [theme, setTheme] = useState("vs-dark");
   const [activeSection, setActiveSection] = useState("roomInfo");
   const [isClient, setIsClient] = useState(false);
+  const [connectionStatus, setConnectionStatus] = useState("connecting");
 
   useEffect(() => {
-    setIsClient(true); // ensure client-side rendering
+    setIsClient(true);
   }, []);
 
   useEffect(() => {
     if (!roomId || !username) return;
+
+    // Initialize socket connection
+    if (!socket) {
+      socket = io(getSocketUrl(), {
+        transports: ['websocket', 'polling'], // Fallback to polling if websocket fails
+        timeout: 20000,
+      });
+
+      socket.on('connect', () => {
+        console.log('Connected to server');
+        setConnectionStatus("connected");
+      });
+
+      socket.on('disconnect', () => {
+        console.log('Disconnected from server');
+        setConnectionStatus("disconnected");
+      });
+
+      socket.on('connect_error', (error) => {
+        console.error('Connection error:', error);
+        setConnectionStatus("error");
+      });
+    }
+
     socket.emit("join-room", { roomId, username });
 
     socket.on("update-code", (newCode) => setCode(newCode));
     socket.on("room-users", (roomUsers) => setUsers(roomUsers));
 
-    return () => socket.disconnect();
+    return () => {
+      if (socket) {
+        socket.off("update-code");
+        socket.off("room-users");
+      }
+    };
   }, [roomId, username]);
+
+  // Cleanup on component unmount
+  useEffect(() => {
+    return () => {
+      if (socket) {
+        socket.disconnect();
+        socket = null;
+      }
+    };
+  }, []);
 
   const copyRoomId = () => {
     navigator.clipboard.writeText(roomId);
@@ -79,6 +132,26 @@ export default function EditorPage() {
       theme: "colored",
       transition: Slide,
     });
+  };
+
+  const getConnectionStatusColor = () => {
+    switch (connectionStatus) {
+      case "connected": return "bg-green-400";
+      case "connecting": return "bg-yellow-400";
+      case "disconnected": return "bg-red-400";
+      case "error": return "bg-red-500";
+      default: return "bg-gray-400";
+    }
+  };
+
+  const getConnectionStatusText = () => {
+    switch (connectionStatus) {
+      case "connected": return "Connected";
+      case "connecting": return "Connecting...";
+      case "disconnected": return "Disconnected";
+      case "error": return "Connection Error";
+      default: return "Unknown";
+    }
   };
 
   return (
@@ -221,8 +294,8 @@ export default function EditorPage() {
 
         <div className="mt-4 pt-2 border-t border-[#E1B7C7] hidden md:block">
           <div className="flex items-center text-xs text-[#5C5C5C]">
-            <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-            Connected
+            <div className={`w-2 h-2 rounded-full mr-2 ${getConnectionStatusColor()}`}></div>
+            {getConnectionStatusText()}
           </div>
         </div>
       </div>
@@ -231,7 +304,7 @@ export default function EditorPage() {
       <div className="w-full md:w-4/5 flex flex-col p-3 md:p-6 flex-1">
         <div className="mb-2 md:mb-6 flex justify-between items-center">
           <div className="flex items-center">
-            <div className="h-2 md:h-3 w-2 md:w-3 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+            <div className={`h-2 md:h-3 w-2 md:w-3 rounded-full mr-2 ${getConnectionStatusColor()}`}></div>
             <h2 className="font-bold text-base md:text-lg text-[#8D4A6A]">
               Live Editing
             </h2>
@@ -251,7 +324,9 @@ export default function EditorPage() {
               value={code}
               onChange={(newCode) => {
                 setCode(newCode);
-                socket.emit("code-changed", { roomId, code: newCode });
+                if (socket && socket.connected) {
+                  socket.emit("code-changed", { roomId, code: newCode });
+                }
               }}
               options={{
                 fontSize: 14,

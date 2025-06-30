@@ -56,15 +56,30 @@ jobs:
 
             echo "Starting backend container..."
             sudo docker run -d --name collaborative-editor-backend \
+              --restart unless-stopped \
               -p 4000:4000 \
               -e PORT=4000 \
+              -e NODE_ENV=production \
               istaprasad/collaborative-editor:backend
 
             echo "Starting frontend container..."
             sudo docker run -d --name collaborative-editor-frontend \
+              --restart unless-stopped \
               -p 3000:80 \
               istaprasad/collaborative-editor:frontend
 
+            echo "Waiting for containers to start..."
+            sleep 10
+
+            echo "Checking container status..."
+            sudo docker ps | grep collaborative-editor
+
+            echo "Checking backend logs..."
+            sudo docker logs collaborative-editor-backend --tail 20
+
             echo "Restarting nginx..."
             sudo systemctl restart nginx
+
+            echo "Checking nginx status..."
+            sudo systemctl status nginx --no-pager
           EOF
