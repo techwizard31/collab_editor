@@ -56,14 +56,15 @@ jobs:
 
             echo "Starting backend container..."
             sudo docker run -d --name collaborative-editor-backend \
-              --network host \
-              -e PORT='4000' \
+              -p 4000:4000 \
+              -e PORT=4000 \
               istaprasad/collaborative-editor:backend
 
-            echo "Starting frontend container with SSL certs..."
+            echo "Starting frontend container..."
             sudo docker run -d --name collaborative-editor-frontend \
               -p 3000:80 \
-              -v /etc/letsencrypt/live/collabeditor.xyz:/etc/letsencrypt/live/collabeditor.xyz:ro \
-              -v /etc/letsencrypt/archive/collabeditor.xyz:/etc/letsencrypt/archive/collabeditor.xyz:ro \
               istaprasad/collaborative-editor:frontend
+
+            echo "Restarting nginx..."
+            sudo systemctl restart nginx
           EOF
