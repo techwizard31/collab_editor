@@ -62,7 +62,7 @@ jobs:
 
             echo "Starting frontend container with SSL certs..."
             sudo docker run -d --name collaborative-editor-frontend \
-              --network host \
+              -p 3000:80 \
               -v /etc/letsencrypt/live/collabeditor.xyz:/etc/letsencrypt/live/collabeditor.xyz:ro \
               -v /etc/letsencrypt/archive/collabeditor.xyz:/etc/letsencrypt/archive/collabeditor.xyz:ro \
               istaprasad/collaborative-editor:frontend
